@@ -14,6 +14,13 @@ class Constants {
     static let API_KEY: String = "33bb58401bd450343af2dda54d38b4f1"
     static let MAIN_STORYBOARD: String = "Main"
     
+    static let NO_INTERNET_CONNNECTION: String = "No Interner Connection"
+    static let INCORRECT_URL: String = "Incorrect Url"
+    static let SOMETHING_WENT_WRONG: String = "Something went wrong"
+    static let Error_Retrieving: String = "Error retrieving"
+    static let Error_Saving: String = "Error Saving"
+    static let Release_Date: String = "Release date:"
+    
     class Images {
         static let PLACEHOLDER_IMAGE: String = "placeholder"
         static let RATING_IAMGE: String = "ratingImg"

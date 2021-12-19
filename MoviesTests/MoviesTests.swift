@@ -60,14 +60,6 @@ class MoviesTests: XCTestCase {
         }
         
     }
-    
-    func test_case_for_filter_button() {
-        let vc = makeSut()
-        vc.viewModel?.moviesList = [MoviesList(id: 1, original_title: "Hero", original_language: "hi", overview: "Good Movie", release_date: "12-01-2022", title: "Hero", vote_average: 7.8, backdrop_path: "/image", poster_path: "/image"),MoviesList(id: 2, original_title: "Hero", original_language: "hi", overview: "Good Movie", release_date: "12-01-2022", title: "Hero", vote_average: 8.8, backdrop_path: "/image", poster_path: "/image")]
-        vc.btnFillter1.sendActions(for: .touchUpInside)
-        XCTAssertEqual(vc.viewModel?.moviesCount(), 0)
-        
-    }
 
 }
 extension MoviesTests {

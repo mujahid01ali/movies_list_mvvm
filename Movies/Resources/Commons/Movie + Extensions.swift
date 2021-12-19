@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-extension String {
-}
-
 extension UIViewController {
     static var indentifire: String {
         get {

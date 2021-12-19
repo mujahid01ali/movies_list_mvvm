@@ -11,16 +11,16 @@ import Alamofire
 class NetworkService {
     func callApi(path: String?, requestType: Alamofire.HTTPMethod, param: [String:Any]?, success: @escaping (Data?) -> (), failure: @escaping (String) -> ()) {
         if !Connectivity.isConnectedToInternet {
-            failure("No Interner Connection")
+            failure(Constants.NO_INTERNET_CONNNECTION)
         } else {
             
             guard let url = path else {
-                failure("Incorrect endpoint")
+                failure(Constants.INCORRECT_URL)
                 return
             }
             let endpoint = Constants.BASE_URL + url
             guard let encodedUrl = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                failure("Incorrect Url")
+                failure(Constants.INCORRECT_URL)
                 return
             }
             var parameters: [String:Any] = [:]

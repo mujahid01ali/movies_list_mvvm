@@ -83,7 +83,7 @@ class MoviesListVM {
                 self.delegate?.reloadTable()
             }
         } catch {
-            print("Error retrieving: \(error)")
+            print(Constants.Error_Retrieving)
         }
     }
     
@@ -117,7 +117,7 @@ class MoviesListVM {
         do {
             try context.save()
         } catch {
-            print("Error saving: \(error)")
+            print(Constants.Error_Saving)
         }
     }
     
@@ -134,7 +134,6 @@ class MoviesListVM {
         } else {
             moviesList = originalMoviesList
             moviesList = moviesList.filter( {(($0.vote_average ?? 0) >= val1 && ($0.vote_average ?? 0) <= val2)})
-            print(moviesList.count)
         }
         delegate?.reloadTable()
     }
@@ -157,10 +156,10 @@ class NetworkServiceManager: NetworkServiceProotocol {
                 if let list = parsedResult?.results {
                     success(list)
                 } else {
-                    failure("error")
+                    failure(Constants.SOMETHING_WENT_WRONG)
                 }
             }else {
-                failure("error")
+                failure(Constants.SOMETHING_WENT_WRONG)
             }
         }, failure: { str in
             failure(str)

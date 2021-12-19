@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MoviesListVM()
-        //viewModel = MoviesListVM(networkManager: NetworkServiceProotocol = MockNetwork())
         viewModel?.delegate = self
         Connectivity.isConnectedToInternet == true ? viewModel?.getMoviesList(param: nil, path: Constants.MOVIEW_LIST_END_POINTS) : viewModel?.getListFromCoreData()
         

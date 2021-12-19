@@ -22,7 +22,7 @@ class MovieDetailCell: UITableViewCell {
     
     func cellConfig(res: MoviesList?) {
         lblHeading.setValue(val: res?.title)
-        lblBy.setValue(val: "Release date: \(res?.release_date ?? "")")
+        lblBy.setValue(val: Constants.Release_Date + "\(res?.release_date ?? "")")
         lblOverview.setValue(val: res?.overview)
         if let url = res?.backdrop_path, let finalUrl = URL(string: "\(Constants.IMAGE_BASE_URL)\(url)") {
             ivTop.sd_setImage(with: finalUrl, placeholderImage: UIImage(named: Constants.Images.PLACEHOLDER_IMAGE), completed: nil)
